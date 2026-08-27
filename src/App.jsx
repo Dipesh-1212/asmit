@@ -892,7 +892,7 @@ function Contact() {
             </div>
           </div>
 
-          <form
+          {/* <form
             className="border border-board-600/60 bg-board-950 p-6 md:p-8 space-y-5"
             onSubmit={(e) => e.preventDefault()}
           >
@@ -949,7 +949,7 @@ function Contact() {
               service (e.g. Formspree) or a backend before deploying to actually
               receive messages.
             </p>
-          </form>
+          </form> */}
         </div>
       </div>
     </section>
