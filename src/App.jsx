@@ -883,7 +883,7 @@ function Contact() {
                 <Github size={17} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/asmit-shrestha-511616377"
                 className="h-11 w-11 flex items-center justify-center border border-board-600/70 text-silk-300 hover:border-gold-400 hover:text-gold-400 transition-colors"
                 aria-label="LinkedIn"
               >
