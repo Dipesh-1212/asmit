@@ -25,6 +25,7 @@ const NAV = [
   { id: "log", label: "Build Log" },
   { id: "components", label: "Components" },
   { id: "field", label: "Field Tests" },
+  { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -824,6 +825,93 @@ function FieldTests() {
   );
 }
 
+const SOCIAL_PROJECTS = [
+  {
+    title: "Robo-Football Build",
+    detail: "Competition robot project and match-day testing",
+    img: "/images/robot-arena.jpeg",
+    url: "https://www.facebook.com/100047057213229/posts/1537189706752400/?mibextid=wwXIfr&rdid=PIGof84p8Feva0fS#",
+  },
+  {
+    title: "Project Showcase",
+    detail: "Hardware project presentation and build documentation",
+    img: "/images/aroma-expo-banner.jpeg",
+    url: "https://www.facebook.com/photo.php?fbid=916617543799580&type=3&mibextid=wwXIfr&rdid=Cx1K6m7sj6p2QrmI&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18KRiTj55S%2F%3Fmibextid%3DwwXIfr#",
+  },
+  {
+    title: "Robot Race Project",
+    detail: "Self-built robot prepared for a timed obstacle course",
+    img: "/images/npc-track.jpeg",
+    url: "https://www.facebook.com/61551385760633/posts/122130113774046192/?mibextid=wwXIfr&rdid=eUBAK8womYzvuZYu#",
+  },
+  {
+    title: "Cyber Robot Showdown",
+    detail: "Field-tested robotics project from the competition floor",
+    img: "/images/cyber-robot-banner.jpeg",
+    url: "https://www.facebook.com/100068733234493/posts/670174685283633/?fs=e&mibextid=wwXIfr&rdid=phmsPtypn8kwjCW7#",
+  },
+  {
+    title: "Team Robotics Demo",
+    detail: "Collaborative build demo and project presentation",
+    img: "/images/aroma-team-demo.jpeg",
+    url: "https://www.facebook.com/photo.php?fbid=916619373799397&type=3&rdid=aPXqS0XRky00EZIY&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GihQuKpnW%2F#",
+  },
+];
+
+function SocialProjects() {
+  return (
+    <section
+      id="projects"
+      className="bg-board-900 py-24 border-t border-board-700/60"
+    >
+      <div className="max-w-6xl mx-auto px-6 md:px-10">
+        <Eyebrow>External Project Archive</Eyebrow>
+        <h2 className="font-stencil text-4xl md:text-5xl text-silk-100 uppercase mb-10">
+          Social Projects
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {SOCIAL_PROJECTS.map((project, index) => (
+            <a
+              key={project.url}
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              className="group border border-board-600/60 bg-board-950 p-1.5 focus-visible:border-gold-400 transition-colors"
+              aria-label={`Open ${project.title} on Facebook`}
+            >
+              <div className="overflow-hidden relative">
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  loading="lazy"
+                  className="w-full h-56 object-cover grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                />
+                <span className="absolute top-3 left-3 bg-board-950/90 border border-copper-500/70 px-2 py-1 font-mono text-[10px] tracking-widest text-copper-400">
+                  0{index + 1}
+                </span>
+              </div>
+              <div className="flex items-start justify-between gap-3 px-2 py-3">
+                <div>
+                  <h3 className="font-mono text-sm text-silk-100 uppercase tracking-wide">
+                    {project.title}
+                  </h3>
+                  <p className="font-mono text-[11px] text-silk-400 mt-2 leading-snug">
+                    {project.detail}
+                  </p>
+                </div>
+                <ArrowUpRight
+                  size={16}
+                  className="shrink-0 text-copper-400 mt-0.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section
@@ -982,6 +1070,7 @@ export default function App() {
         <BuildLog />
         <Components />
         <FieldTests />
+        <SocialProjects />
         <Contact />
       </main>
       <Footer />
